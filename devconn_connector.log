@@ -1,0 +1,98 @@
+2024-11-12T14:22:48.738258660Z 13:22:48.737 [info] [configurator:#PID<0.971.0>] Init with state: %{env_params: [backend_connection: [url: "wss://dmp.swissinnolab.com:4040/", api_key: "0qqvhiarvpsjvm6p7zp3g5hgobfj0ugzluqgm3ovm399kjy4bdfulx08gs58", device_id: "26316463"], state_server: [port: 9876], env: :prod, service_connection: [c_ctrl: "ws://127.0.0.1:8008/", c_flow: "ws://127.0.0.1:8337/"], params: [telemetry_period: 15, connection_intermittent: false]]}
+2024-11-12T14:22:48.738630708Z 13:22:48.737 [info] [state_file_manager:#PID<0.972.0>] Init with state: %{maintenance_mode_start: -576460751447, connection_active: false}
+2024-11-12T14:22:48.738848194Z 13:22:48.737 [info] [message_interceptor:#PID<0.974.0>] Init with state: %{c_ctrl: %{connected: false, oplevels: nil, initial_update: true, resources_timer: nil, resources: %{}}}
+2024-11-12T14:22:48.739018381Z 13:22:48.737 [info] [state_server:#PID<0.973.0>] Accepting connections on port 9876
+2024-11-12T14:22:48.739256317Z 13:22:48.737 [info] [message_router:#PID<0.975.0>] Init with state: %{tag: "message_router", services: []}
+2024-11-12T14:22:48.739481358Z 13:22:48.738 [info] [c_backend:#PID<0.969.0>] Starting: {uri="wss://dmp.swissinnolab.com:4040/device/0qqvhiarvpsjvm6p7zp3g5hgobfj0ugzluqgm3ovm399kjy4bdfulx08gs58/websocket"; state=%{connected: false, id: :c_backend, tag: "c_backend", msg_wflags: true}}
+2024-11-12T14:22:48.739645593Z 13:22:48.738 [info] [telemetry_collector:#PID<0.979.0>] Init with state: %{}
+2024-11-12T14:22:48.739911053Z 13:22:48.738 [info] [telemetry_collector:#PID<0.979.0>] Next tick in 10000
+2024-11-12T14:22:49.038190955Z 13:22:49.036 [info] (Fresh) WebSocket connection established
+2024-11-12T14:22:49.039150220Z 13:22:49.037 [info] [c_backend:#PID<0.976.0>] Connected! Status: 101; Headers: [{"cache-control", "max-age=0, private, must-revalidate"}, {"connection", "Upgrade"}, {"date", "Tue, 12 Nov 2024 13:22:48 GMT"}, {"sec-websocket-accept", "sPt/LCncfrOe0Q5gPabzec3ZMvA="}, {"server", "Cowboy"}, {"upgrade", "websocket"}]
+2024-11-12T14:22:49.040107160Z 13:22:49.037 [info] [c_ctrl:#PID<0.969.0>] Starting: {uri="ws://127.0.0.1:8008/"; state=%{connected: false, id: :c_ctrl, tag: "c_ctrl", msg_wflags: false}}
+2024-11-12T14:22:49.041248964Z 13:22:49.037 [info] [c_flow:#PID<0.969.0>] Starting: {uri="ws://127.0.0.1:8337/"; state=%{connected: false, id: :c_flow, tag: "c_flow", msg_wflags: false}}
+2024-11-12T14:22:49.042765055Z 13:22:49.038 [info] [state_file_manager:#PID<0.972.0>] Set connection active called with active=true
+2024-11-12T14:22:49.044021467Z 13:22:49.038 [info] [message_router:#PID<0.975.0>] Sending maintenance mode state: true
+2024-11-12T14:22:49.045000709Z 13:22:49.038 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:49.045833242Z 13:22:49.038 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:49.046722899Z 13:22:49.038 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:49.047648400Z 13:22:49.038 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:49.292211011Z 13:22:49.291 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:49.293292365Z 13:22:49.291 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:49.294443954Z 13:22:49.291 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:49.295479867Z 13:22:49.291 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:49.669377639Z 13:22:49.668 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:49.670376491Z 13:22:49.668 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:49.671471248Z 13:22:49.668 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:49.671849209Z 13:22:49.668 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:50.233849455Z 13:22:50.232 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:50.234892259Z 13:22:50.232 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:50.235862109Z 13:22:50.232 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:50.236880715Z 13:22:50.232 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:51.080764578Z 13:22:51.079 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:51.082021926Z 13:22:51.079 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:51.083113600Z 13:22:51.079 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:51.084400951Z 13:22:51.079 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:52.350951126Z 13:22:52.349 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:52.351921826Z 13:22:52.349 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:52.352721369Z 13:22:52.349 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:52.353695244Z 13:22:52.350 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:54.254985155Z 13:22:54.253 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:54.256157094Z 13:22:54.254 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:54.257387875Z 13:22:54.254 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:54.258574728Z 13:22:54.254 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:57.110244532Z 13:22:57.109 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:57.111367284Z 13:22:57.109 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:57.112230793Z 13:22:57.109 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:22:57.113182730Z 13:22:57.109 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:22:58.740273196Z 13:22:58.739 [info] [telemetry_collector:#PID<0.979.0>] Reading telemetry...
+2024-11-12T14:22:58.754870112Z 13:22:58.753 [info] [telemetry_collector:#PID<0.979.0>] Next tick in 900000
+2024-11-12T14:22:58.755960449Z 13:22:58.753 [info] [message_router:#PID<0.975.0>] Sending telemetry: ["system"]
+2024-11-12T14:23:01.391701969Z 13:23:01.390 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:01.392773232Z 13:23:01.390 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:01.393720032Z 13:23:01.390 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:01.394855194Z 13:23:01.390 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:07.812946986Z 13:23:07.811 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:07.814129815Z 13:23:07.811 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:07.815350065Z 13:23:07.811 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:07.816467607Z 13:23:07.812 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:17.444927239Z 13:23:17.443 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:17.446079642Z 13:23:17.443 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:17.447168993Z 13:23:17.443 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:17.448254758Z 13:23:17.444 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:31.892468478Z 13:23:31.890 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:31.893564112Z 13:23:31.891 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:31.894791417Z 13:23:31.891 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:31.895882460Z 13:23:31.891 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:49.314648186Z 13:23:49.313 [info] (Fresh) WebSocket connection is being closed with code 1000: 
+2024-11-12T14:23:49.315446432Z 13:23:49.313 [info] [c_backend:#PID<0.976.0>] Disconnected! Code: 1000; Reason: ""
+2024-11-12T14:23:49.316315841Z 13:23:49.313 [info] [state_file_manager:#PID<0.972.0>] Set connection active called with active=false
+2024-11-12T14:23:49.582639674Z 13:23:49.581 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:49.583661103Z 13:23:49.581 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:49.969978821Z 13:23:49.968 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:49.971054152Z 13:23:49.969 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:50.550604568Z 13:23:50.549 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:50.551792662Z 13:23:50.549 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:51.410697269Z 13:23:51.409 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:51.411699528Z 13:23:51.409 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:52.689676422Z 13:23:52.688 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:52.690508948Z 13:23:52.688 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:53.562082615Z 13:23:53.561 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:53.563133994Z 13:23:53.560 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:53.564285884Z 13:23:53.561 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:53.565413662Z 13:23:53.561 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:54.609333804Z 13:23:54.608 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:54.610325131Z 13:23:54.608 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:23:57.475673716Z 13:23:57.474 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:23:57.476638108Z 13:23:57.474 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:24:01.769970749Z 13:24:01.768 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:24:01.771070585Z 13:24:01.768 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:24:08.352947806Z 13:24:08.351 [info] (Fresh) WebSocket connection established
+2024-11-12T14:24:08.354113485Z 13:24:08.351 [info] [c_backend:#PID<0.976.0>] Connected! Status: 101; Headers: [{"cache-control", "max-age=0, private, must-revalidate"}, {"connection", "Upgrade"}, {"date", "Tue, 12 Nov 2024 13:24:07 GMT"}, {"sec-websocket-accept", "dkJnsqHN6dykICIAsHowcK7l3TY="}, {"server", "Cowboy"}, {"upgrade", "websocket"}]
+2024-11-12T14:24:08.355195210Z 13:24:08.352 [info] [c_ctrl:#PID<0.969.0>] Starting: {uri="ws://127.0.0.1:8008/"; state=%{connected: false, id: :c_ctrl, tag: "c_ctrl", msg_wflags: false}}
+2024-11-12T14:24:08.356534457Z 13:24:08.352 [info] [c_flow:#PID<0.969.0>] Starting: {uri="ws://127.0.0.1:8337/"; state=%{connected: false, id: :c_flow, tag: "c_flow", msg_wflags: false}}
+2024-11-12T14:24:08.357733098Z 13:24:08.352 [info] [state_file_manager:#PID<0.972.0>] Set connection active called with active=true
+2024-11-12T14:24:08.358912638Z 13:24:08.352 [info] [message_router:#PID<0.975.0>] Sending maintenance mode state: true
+2024-11-12T14:24:23.563965703Z 13:24:23.562 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:24:23.565079878Z 13:24:23.562 [error] (Fresh) Connecting to host failed: %Mint.TransportError{reason: :econnrefused}
+2024-11-12T14:24:23.566204392Z 13:24:23.562 [info] [c_flow:#PID<0.989.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+2024-11-12T14:24:23.567142673Z 13:24:23.562 [info] [c_ctrl:#PID<0.987.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}

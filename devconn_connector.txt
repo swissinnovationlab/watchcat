@@ -1,0 +1,43 @@
+starting:
+
+devconn_connector  | 2024-11-12T14:22:48.739481358+01:0013:22:48.738 [info] [c_backend:#PID<0.969.0>] Starting: {uri="wss://dmp.swissinnolab.com:4040/device/0qqvhiarvpsjvm6p7zp3g5hgobfj0ugzluqgm3ovm399kjy4bdfulx08gs58/websocket"; state=%{connected: false, id: :c_backend, tag: "c_backend", msg_wflags: true}}
+
+connected: (c_backend)
+
+devconn_connector  | 2024-11-12T14:24:08.354113485+01:0013:24:08.351 [info] [c_backend:#PID<0.976.0>] Connected! Status: 101; Headers: [{"cache-control", "max-age=0, private, must-revalidate"}, {"connection", "Upgrade"}, {"date", "Tue, 12 Nov 2024 13:24:07 GMT"}, {"sec-websocket-accept", "dkJnsqHN6dykICIAsHowcK7l3TY="}, {"server", "Cowboy"}, {"upgrade", "websocket"}]
+
+error:
+
+devconn_connector  | 2024-11-12T14:23:57.476638108+01:0013:23:57.474 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}
+
+disconnected:
+
+devconn_connector  | 2024-11-12T14:23:49.315446432+01:0013:23:49.313 [info] [c_backend:#PID<0.976.0>] Disconnected! Code: 1000; Reason: ""
+
+sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT
+sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT
+
+loose connection after:
+Wed Oct 30 11:01:54 AM CET 2024
+           10:02:47.082
+
+got connection:
+Wed Oct 30 11:03:23 AM CET 2024
+           10:03:30.282
+
+ako nije bil connectoat 2h u komadu restart
+
+
+UPTIME:
+cat /proc/uptime | awk '{print $1}'
+uptime -s
+
+dorain_watchdog.sh:
+  dorian_watchdog_uptime.txt
+  dorian_watchdog_devconn_connector.txt
+  dorian_watchdog_openvpn_dmp.txt
+
+ako uptime > 2h:
+  ako bilo koji > 2h:
+    restart
+      >> dorain_watchdog_reboot_reason.txt
