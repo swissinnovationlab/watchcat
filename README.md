@@ -17,11 +17,13 @@ ako uptime > 2h:
 
 ### Examples
 - connected:
-  `2024-11-12T14:24:08.354113485Z 13:24:08.351 [info] [c_backend:#PID<0.976.0>] Connected! Status: 101; Headers: [{"cache-control", "max-age=0, private, must-revalidate"}, {"connection", "Upgrade"}, {"date", "Tue, 12 Nov 2024 13:24:07 GMT"}, {"sec-websocket-accept", "dkJnsqHN6dykICIAsHowcK7l3TY="}, {"server", "Cowboy"}, {"upgrade", "websocket"}]`
+
+...`2024-11-12T14:24:08.354113485Z 13:24:08.351 [info] [c_backend:#PID<0.976.0>] Connected! Status: 101; Headers: [{"cache-control", "max-age=0, private, must-revalidate"}, {"connection", "Upgrade"}, {"date", "Tue, 12 Nov 2024 13:24:07 GMT"}, {"sec-websocket-accept", "dkJnsqHN6dykICIAsHowcK7l3TY="}, {"server", "Cowboy"}, {"upgrade", "websocket"}]`
 - error:
-  `2024-11-12T14:23:57.476638108Z 13:23:57.474 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}`
+
+...`2024-11-12T14:23:57.476638108Z 13:23:57.474 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}`
 - disconnected:
-  `2024-11-12T14:23:49.315446432Z 13:23:49.313 [info] [c_backend:#PID<0.976.0>] Disconnected! Code: 1000; Reason: ""`
+...`2024-11-12T14:23:49.315446432Z 13:23:49.313 [info] [c_backend:#PID<0.976.0>] Disconnected! Code: 1000; Reason: ""`
 
 ### Testing
 - disable connection:
