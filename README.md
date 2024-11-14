@@ -85,8 +85,13 @@ log lines are based on control channel which is every 1h
 
    `docker logs -t -f devconn_connector | sh dorian_watchdog_devconn_connector.sh`
 
-## uptime
+## Install
+- clone this repo to ~/dorian_watchdog
+- put all files inside `services` folder to `~/.config/systemd/user/`
 
-cat /proc/uptime | awk '{print $1}'
-uptime -s
-
+```
+systemctl --user daemon-reload
+systemctl --user enable dorian_watchdog_devconn_connector.service
+systemctl --user enable dorian_watchdog_openvpn_dmp.service
+systemctl --user enable dorian_watchdog.timer
+```
