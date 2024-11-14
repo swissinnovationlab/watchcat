@@ -37,6 +37,9 @@ log lines are based on telemetry timeout which is by default set to 15m
    `2024-11-12T14:23:49.315446432Z 13:23:49.313 [info] [c_backend:#PID<0.976.0>] Disconnected! Code: 1000; Reason: ""`
 
 ### Testing
+- start container using dorian_builder:
+
+   `docker compose --env-file dorian_builder.env --profile devconn_connector up`
 - disable connection:
 
    `sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
