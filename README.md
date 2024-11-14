@@ -14,7 +14,6 @@ ako uptime > 2h:
   ako bilo koji > 2h:
     restart
       >> dorain_watchdog_reboot_reason.txt
-   `2024-11-14T14:16:43+00:00 neotux openvpn[741]: [tuxmali] Peer Connection Initiated with [AF_INET]78.1.117.82:9898`
 ```
 ## devconn_connector
 
