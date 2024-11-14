@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPORT_FILE="~/dorian_watchdog_reboot_reason.txt"
+REPORT_FILE="~/dorian_watchdog/logs/dorian_watchdog_reboot_reason.txt"
 CURRENT_TIME=$(date --utc +%s)
 
 FILES=(

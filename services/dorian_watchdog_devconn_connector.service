@@ -1,0 +1,12 @@
+[Unit]
+Description=Dorian Watchdog for Devconn Connector
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/bin/bash -c "docker logs -t -f devconn_connector | sh %h/dorian_watchdog/scripts/dorian_watchdog_devconn_connector.sh"
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=default.target

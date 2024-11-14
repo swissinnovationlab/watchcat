@@ -1,0 +1,7 @@
+[Unit]
+Description=Dorian Watchdog Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/dorian_watchdog/scripts/dorian_watchdog.sh
