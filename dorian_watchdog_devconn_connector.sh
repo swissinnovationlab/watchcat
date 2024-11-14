@@ -1,9 +1,9 @@
 #!/bin/bash
 
 timestamp_pattern="^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{9}Z"
-state_connected=".*\[info\].*Connected!"
-state_disconnected=".*\[info\].*Disconnected!"
-state_error=".*\[info\].*Error!"
+pattern_connected=".*\[info\].*Connected!"
+pattern_disconnected=".*\[info\].*Disconnected!"
+pattern_error=".*\[info\].*Error!"
 
 state="DISCONNECTED"
 state_timestamp=""
@@ -13,15 +13,15 @@ parse_log() {
     if [[ $log_line =~ $timestamp_pattern ]]; then
         local timestamp="${BASH_REMATCH[0]}"
         if [[ $log_line == *"c_backend"* ]]; then
-            if [[ $log_line =~ $state_connected ]]; then
+            if [[ $log_line =~ $pattern_connected ]]; then
                 echo "$timestamp CONNECTED"
                 state="CONNECTED"
                 state_timestamp="$timestamp"
-            elif [[ $log_line =~ $state_error ]]; then
+            elif [[ $log_line =~ $pattern_error ]]; then
                 echo "$timestamp ERROR"
                 state="ERROR"
                 state_timestamp="$timestamp"
-            elif [[ $log_line =~ $state_disconnected ]]; then
+            elif [[ $log_line =~ $pattern_disconnected ]]; then
                 echo "$timestamp DISCONNECTED"
                 state="DISCONNECTED"
                 state_timestamp="$timestamp"
