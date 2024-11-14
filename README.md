@@ -23,17 +23,22 @@ ako uptime > 2h:
 
    `2024-11-12T14:23:57.476638108Z 13:23:57.474 [info] [c_backend:#PID<0.976.0>] Error! Error: {:connecting_failed, %Mint.TransportError{reason: :econnrefused}}`
 - disconnected:
+
    `2024-11-12T14:23:49.315446432Z 13:23:49.313 [info] [c_backend:#PID<0.976.0>] Disconnected! Code: 1000; Reason: ""`
 
 ### Testing
 - disable connection:
-  `sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
-- enable connection
-  `sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
+
+   `sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
+- enable connection:
+
+   `sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
 - viewing logs:
-  `docker logs -t -f devconn_connector`
+
+   `docker logs -t -f devconn_connector`
 - parsing logs:
-  `docker logs -t -f devconn_connector | sh dorian_watchdog_devconn_connector.sh`
+
+   `docker logs -t -f devconn_connector | sh dorian_watchdog_devconn_connector.sh`
 
 ## openvpn_dmp
 
