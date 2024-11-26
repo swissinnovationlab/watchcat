@@ -33,7 +33,7 @@ while IFS= read -r log_line || [[ -n "$log_line" ]]; do
     if [[ -n "$log_line" ]]; then
         parse_log "$log_line"
         if [[ "$state" == "CONNECTED" ]]; then
-            echo $state_timestamp > /tmp/dorian_watchdog_openvpn_dmp.txt
+            echo $state_timestamp > /tmp/watchcat_openvpn_dmp.txt
         fi
     fi
 done

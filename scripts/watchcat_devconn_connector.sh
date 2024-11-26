@@ -38,7 +38,7 @@ while IFS= read -r log_line || [[ -n "$log_line" ]]; do
     if [[ -n "$log_line" ]]; then
         parse_log "$log_line"
         if [[ "$state" == "CONNECTED" ]]; then
-            echo $state_timestamp > /tmp/dorian_watchdog_devconn_connector.txt
+            echo $state_timestamp > /tmp/watchcat_devconn_connector.txt
         fi
     fi
 done

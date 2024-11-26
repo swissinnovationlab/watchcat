@@ -1,11 +1,11 @@
 #!/bin/bash
 
-REPORT_FILE="~/dorian_watchdog/logs/dorian_watchdog_reboot_reason.txt"
+REPORT_FILE="~/watchcat/logs/watchcat_reboot_reason.txt"
 CURRENT_TIME=$(date --utc +%s)
 
 FILES=(
-  "/tmp/dorian_watchdog_openvpn_dmp.txt"
-  "/tmp/dorian_watchdog_devconn_connector.txt"
+  "/tmp/watchcat_openvpn_dmp.txt"
+  "/tmp/watchcat_devconn_connector.txt"
 )
 
 is_timestamp_old() {

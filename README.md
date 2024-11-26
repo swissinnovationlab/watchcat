@@ -1,4 +1,4 @@
-# dorian_watchdog
+# watchcat
 
 ## concept idea:
 
@@ -6,9 +6,9 @@ The script is based on log lines which trigger the update of timestamps based on
 
 ```bash
 dorain_watchdog.sh:
-  dorian_watchdog_uptime.txt
-  dorian_watchdog_devconn_connector.txt
-  dorian_watchdog_openvpn_dmp.txt
+  watchcat_uptime.txt
+  watchcat_devconn_connector.txt
+  watchcat_openvpn_dmp.txt
 
 ako uptime > 2h:
   ako bilo koji > 2h:
@@ -50,7 +50,7 @@ log lines are based on telemetry timeout which is by default set to 15m
    `docker logs -t -f devconn_connector`
 - parsing logs:
 
-   `docker logs -t -f devconn_connector | sh dorian_watchdog_devconn_connector.sh`
+   `docker logs -t -f devconn_connector | sh watchcat_devconn_connector.sh`
 
 ## openvpn_dmp
 
@@ -82,15 +82,15 @@ log lines are based on control channel which is every 1h
 
 - parsing logs:
 
-   `docker logs -t -f devconn_connector | sh dorian_watchdog_devconn_connector.sh`
+   `docker logs -t -f devconn_connector | sh watchcat_devconn_connector.sh`
 
 ## Install
-- clone this repo to ~/dorian_watchdog
+- clone this repo to ~/watchcat
 - put all files inside `services` folder to `~/.config/systemd/user/`
 
 ```
 systemctl --user daemon-reload
-systemctl --user enable dorian_watchdog_devconn_connector.service
-systemctl --user enable dorian_watchdog_openvpn_dmp.service
-systemctl --user enable dorian_watchdog.timer
+systemctl --user enable watchcat_devconn_connector.service
+systemctl --user enable watchcat_openvpn_dmp.service
+systemctl --user enable watchcat.timer
 ```

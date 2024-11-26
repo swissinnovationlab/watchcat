@@ -1,9 +1,9 @@
 [Unit]
-Description=Dorian Watchdog for OpenVPN DMP Client
+Description=Watchcat for OpenVPN DMP Client
 After=openvpn-client@dmp.service
 
 [Service]
-ExecStart=/bin/bash -c 'journalctl --unit=openvpn-client@dmp.service -f --no-pager -o short-iso-precise --utc --since "$(date -d "$(systemctl show -p ActiveEnterTimestamp openvpn-client@dmp.service | cut -d\'=\' -f2)" +\'%Y-%m-%d %H:%M:%S\')" | sh %h/dorian_watchdog/scripts/dorian_watchdog_openvpn_dmp.sh'
+ExecStart=/bin/bash -c 'journalctl --unit=openvpn-client@dmp.service -f --no-pager -o short-iso-precise --utc --since "$(date -d "$(systemctl show -p ActiveEnterTimestamp openvpn-client@dmp.service | cut -d\'=\' -f2)" +\'%Y-%m-%d %H:%M:%S\')" | sh %h/watchcat/scripts/watchcat_openvpn_dmp.sh'
 Restart=always
 RestartSec=10
 
