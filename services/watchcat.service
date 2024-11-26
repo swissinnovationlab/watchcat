@@ -4,4 +4,9 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=%h/watchcat/scripts/watchcat.sh
+Environment=PATH=<PATH>
+Environment=DRYRUN=<DRYRUN>
+ExecStart=$PATH/watchcat/scripts/watchcat.sh $DRYRUN
+
+[Install]
+WantedBy=default.target

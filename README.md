@@ -5,7 +5,7 @@
 The script is based on log lines which trigger the update of timestamps based on the state. If the log line is less often than restart timeout the device will reboot every min timeout.
 
 ```bash
-dorain_watchdog.sh:
+watchcat.sh:
   watchcat_uptime.txt
   watchcat_devconn_connector.txt
   watchcat_openvpn_dmp.txt
@@ -13,7 +13,7 @@ dorain_watchdog.sh:
 ako uptime > 2h:
   ako bilo koji > 2h:
     restart
-      >> dorain_watchdog_reboot_reason.txt
+      >> watchcat_reboot_reason.txt
 ```
 ## devconn_connector
 
