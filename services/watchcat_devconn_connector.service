@@ -1,11 +1,11 @@
 [Unit]
 Description=Watchcat for Devconn Connector
-After=docker.service
-Requires=docker.service
+#After=docker.service
+#Requires=docker.service
 
 [Service]
-Environment=PATH=<PATH>
-ExecStart=/bin/bash -c "docker logs -t -f devconn_connector | sh $PATH/scripts/watchcat_devconn_connector.sh"
+Environment=INSTALLER_PATH=<INSTALLER_PATH>
+ExecStart=/bin/bash -c "docker logs -t -f devconn_connector | sh ${INSTALLER_PATH}/scripts/watchcat_devconn_connector.sh"
 Restart=always
 RestartSec=10s
 
