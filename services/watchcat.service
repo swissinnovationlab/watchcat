@@ -6,7 +6,7 @@ After=network.target
 Type=oneshot
 Environment=PATH=<PATH>
 Environment=DRYRUN=<DRYRUN>
-ExecStart=$PATH/watchcat/scripts/watchcat.sh $DRYRUN
+ExecStart=/bin/bash -c "$PATH/scripts/watchcat.sh $DRYRUN"
 
 [Install]
 WantedBy=default.target
