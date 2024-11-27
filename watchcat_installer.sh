@@ -22,6 +22,7 @@ install_app() {
 
     chmod +x $INSTALLER_PATH/scripts/watchcat.sh
     chmod +x $INSTALLER_PATH/scripts/watchcat_devconn_connector.sh
+    chmod +x $INSTALLER_PATH/scripts/watchcat_devconn_connector_journal.sh
     chmod +x $INSTALLER_PATH/scripts/watchcat_openvpn_dmp.sh
 
     if [[ ! -d "$SYSTEMD_PATH" ]]; then

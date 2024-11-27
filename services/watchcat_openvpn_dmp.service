@@ -4,7 +4,7 @@ After=openvpn-client@dmp.service
 
 [Service]
 Environment=INSTALLER_PATH=<INSTALLER_PATH>
-ExecStart=/bin/bash -c 'journalctl --unit=openvpn-client@dmp.service -f --no-pager -o short-iso-precise --utc --since "$(date -d "$(systemctl show -p ActiveEnterTimestamp openvpn-client@dmp.service | cut -d\'=\' -f2)" +\'%Y-%m-%d %H:%M:%S\')" | sh ${INSTALLER_PATH}/scripts/watchcat_openvpn_dmp.sh'
+ExecStart=/bin/bash -c "sh ${INSTALLER_PATH}/scripts/watchcat_openvpn_dmp_journal.sh | sh ${INSTALLER_PATH}/scripts/watchcat_openvpn_dmp.sh"
 Restart=always
 RestartSec=10
 

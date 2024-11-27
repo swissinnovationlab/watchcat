@@ -28,13 +28,18 @@ parse_log() {
     fi
 }
 
-while IFS= read -r log_line || [[ -n "$log_line" ]]; do
-    log_line="${log_line//[$'\t\r\n ']}" # trim whitespace
-    if [[ -n "$log_line" ]]; then
-        parse_log "$log_line"
-        if [[ "$state" == "CONNECTED" ]]; then
-            echo $state_timestamp > /tmp/watchcat_openvpn_dmp.txt
+main() {
+    while IFS= read -r log_line || [[ -n "$log_line" ]]; do
+        log_line="${log_line//[$'\t\r\n ']}" # trim whitespace
+        if [[ -n "$log_line" ]]; then
+            parse_log "$log_line"
+            if [[ "$state" == "CONNECTED" ]]; then
+                echo $state_timestamp > /tmp/watchcat_openvpn_dmp.txt
+            fi
         fi
-    fi
-done
+    done
+}
 
+echo Starting script
+main
+echo Ending script

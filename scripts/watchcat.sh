@@ -52,7 +52,7 @@ check_file() {
     if is_timestamp_old "$TIMESTAMP"; then
       echo "Reboot triggered by $file with timestamp $TIMESTAMP; current UTC time: $(date --utc +%Y-%m-%dT%H:%M:%S%z) DRYRUN=$DRYRUN" >> "$REPORT_FILE"
       echo "Rebooting system due to file $file with old timestamp."
-      [ $DRYRUN -eq 0 ] && sudo reboot || echo "Reboot skipped due to dry run flag"
+      [ $DRYRUN -eq 0 ] && sudo reboot || echo "Reboot skipped due to --dryrun FLAG or failed"
     else
       REMAINING_TIME=$(time_until_timeout "$TIMESTAMP")
       echo "$file $REMAINING_TIME till timeout"
