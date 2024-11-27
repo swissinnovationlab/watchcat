@@ -2,11 +2,11 @@
 Description=Trigger Dorian Watchdog
 
 [Timer]
-#OnCalendar=hourly
-#Persistent=true
-OnBootSec=60s
-OnUnitActiveSec=60s
-AccuracySec=1
+OnCalendar=hourly
+Persistent=true
+#OnBootSec=60s
+#OnUnitActiveSec=60s
+#AccuracySec=1
 
 [Install]
 WantedBy=timers.target
