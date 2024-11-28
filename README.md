@@ -84,13 +84,13 @@ log lines are based on control channel which is every 1h
 
    `docker logs -t -f devconn_connector | sh watchcat_devconn_connector.sh`
 
-## Install
-- clone this repo to ~/watchcat
-- put all files inside `services` folder to `~/.config/systemd/user/`
+## Installation
 
-```
-systemctl --user daemon-reload
-systemctl --user enable watchcat_devconn_connector.service
-systemctl --user enable watchcat_openvpn_dmp.service
-systemctl --user enable watchcat.timer
-```
+### Install testing (dryrun)
+`sh watchcat_installer.sh -i --dryrun`
+
+### Install production
+`sh watchcat_installer.sh -i`
+
+### Uninstall
+`sh watchcat_installer.sh -d`
