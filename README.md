@@ -1,5 +1,56 @@
 # watchcat
 
+## Installation
+
+### Install testing (dryrun)
+This will do all its logic but the reboot will not happend
+`sh watchcat_installer.sh -i --dryrun`
+
+### Install production
+`sh watchcat_installer.sh -i`
+
+### Uninstall
+`sh watchcat_installer.sh -d`
+
+## Testing
+### Disable ALL communication to the backend
+`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
+
+### Enable ALL communication to the backend
+`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
+
+### Disable OPENVPN communication
+`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 --dport 9897 -j REJECT`
+
+### Enable OPENVPN communication
+`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 9897 -j REJECT`
+
+### Disable DMP communication
+`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
+
+### Enable DMP communication
+`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
+
+## Viewing logs
+### watchcat
+`journalctl --user-unit=watchcat.service -f`
+
+### openvpn
+`journalctl --user-unit=watchcat_openvpn_dmp.service -f`
+
+### dmp
+`journalctl --user-unit=watchcat_devconn_connector.service -f`
+
+## Viewing generated files
+### watchcat
+`tail -f ./logs/watchcat_reboot_reason.txt`
+
+### openvpn
+`tail -f /tmp/watchcat_openvpn_dmp.txt`
+
+### dmp
+`tail -f /tmp/watchcat_devconn_connector.txt`
+
 ## concept idea:
 
 The script is based on log lines which trigger the update of timestamps based on the state. If the log line is less often than restart timeout the device will reboot every min timeout.
@@ -70,53 +121,3 @@ log lines are based on control channel which is every 1h
    `2024-11-14T14:04:02.000000+00:00 neotux openvpn[372571]: TCP: connect to [AF_INET]20.203.166.66:9897 failed: Connection refused`
 
 
-## Installation
-
-### Install testing (dryrun)
-This will do all its logic but the reboot will not happend
-`sh watchcat_installer.sh -i --dryrun`
-
-### Install production
-`sh watchcat_installer.sh -i`
-
-### Uninstall
-`sh watchcat_installer.sh -d`
-
-## Testing
-### Disable ALL communication to the backend
-`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
-
-### Enable ALL communication to the backend
-`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
-
-### Disable OPENVPN communication
-`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 --dport 9897 -j REJECT`
-
-### Enable OPENVPN communication
-`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 9897 -j REJECT`
-
-### Disable DMP communication
-`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
-
-### Enable DMP communication
-`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
-
-## Viewing logs
-### watchcat
-`journalctl --user-unit=watchcat.service -f`
-
-### openvpn
-`journalctl --user-unit=watchcat_openvpn_dmp.service -f`
-
-### dmp
-`journalctl --user-unit=watchcat_devconn_connector.service -f`
-
-## Viewing generated files
-### watchcat
-`tail -f ./logs/watchcat_reboot_reason.txt`
-
-### openvpn
-`tail -f /tmp/watchcat_openvpn_dmp.txt`
-
-### dmp
-`tail -f /tmp/watchcat_devconn_connector.txt`
