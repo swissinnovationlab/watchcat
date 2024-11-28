@@ -4,6 +4,7 @@
 
 ### Install testing (dryrun)
 This will do all its logic but the reboot will not happend
+
 `sh watchcat_installer.sh -i --dryrun`
 
 ### Install production
