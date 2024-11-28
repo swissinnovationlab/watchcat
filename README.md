@@ -69,24 +69,11 @@ log lines are based on control channel which is every 1h
 
    `2024-11-14T14:04:02.000000+00:00 neotux openvpn[372571]: TCP: connect to [AF_INET]20.203.166.66:9897 failed: Connection refused`
 
-### Testing
-- disable connection:
-
-   `sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
-- enable connection:
-
-   `sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
-- viewing logs:
-
-   `journalctl --unit=openvpn-client@dmp.service -f --no-pager -o short-iso-precise --utc --since "$(date -d "$(systemctl show -p ActiveEnterTimestamp openvpn-client@dmp.service | cut -d'=' -f2)" +'%Y-%m-%d %H:%M:%S')"`
-
-- parsing logs:
-
-   `docker logs -t -f devconn_connector | sh watchcat_devconn_connector.sh`
 
 ## Installation
 
 ### Install testing (dryrun)
+This will do all its logic but the reboot will not happend
 `sh watchcat_installer.sh -i --dryrun`
 
 ### Install production
@@ -94,3 +81,22 @@ log lines are based on control channel which is every 1h
 
 ### Uninstall
 `sh watchcat_installer.sh -d`
+
+## Testing
+### Disable ALL communication to the backend
+`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
+
+### Enable ALL communication to the backend
+`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 -j REJECT`
+
+### Disable OPENVPN communication
+`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 --dport 9897 -j REJECT`
+
+### Enable OPENVPN communication
+`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 9897 -j REJECT`
+
+### Disable DMP communication
+`sudo iptables -A OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
+
+### Enable DMP communication
+`sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
