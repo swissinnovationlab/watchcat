@@ -100,3 +100,23 @@ This will do all its logic but the reboot will not happend
 
 ### Enable DMP communication
 `sudo iptables -D OUTPUT -p tcp -d 20.203.166.66 --dport 4040 -j REJECT`
+
+## Viewing logs
+### watchcat
+`journalctl --user-unit=watchcat.service -f`
+
+### openvpn
+`journalctl --user-unit=watchcat_openvpn_dmp.service -f`
+
+### dmp
+`journalctl --user-unit=watchcat_devconn_connector.service -f`
+
+## Viewing generated files
+### watchcat
+`tail -f ./logs/watchcat_reboot_reason.txt`
+
+### openvpn
+`tail -f /tmp/watchcat_openvpn_dmp.txt`
+
+### dmp
+`tail -f /tmp/watchcat_devconn_connector.txt`
